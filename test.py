@@ -63,19 +63,20 @@ class TradingAgent:
             'Authorization': f'Bearer {self.zkagi_api_key}'
         }
         data = {
-            "model": "mistral-large-latest",
+            "model": "open-mistral-nemo",
             "messages": [{"role": "user", "content": prompt}],
             "zk_proof": True
         }
 
-        response = requests.post(self.zkagi_api_url, headers=headers, json=data)
+        response = requests.post(self.zkagi_api_url+"/chat/completions", headers=headers, json=data)
         end_time = time.time()
 
         if response.status_code == 200:
             print(Fore.GREEN + Style.BRIGHT + f"Analysis Time= {end_time - start_time:.2f} seconds")
-            return response.json()['choices'][0]['message']
+            return response.json().get('choices', [{}])[0].get('message', {})
         else:
             print(Fore.RED + Style.BRIGHT + f"Failed to analyze response: {response.status_code} ❌")
+            print(Fore.RED + Style.BRIGHT + f"Response: {response.text}")
             return None
 
     def execute_swap(self):
@@ -112,14 +113,17 @@ class TradingAgent:
 
             print(Fore.CYAN + Style.BRIGHT + "\nAnalyzing response...")
             analysis_result = self.analyze_response(analysis_data)
-            print(Fore.CYAN + Style.BRIGHT + "\nAnalysis Result:")
-            print(analysis_result['content'])
+            if analysis_result:
+                print(Fore.CYAN + Style.BRIGHT + "\nAnalysis Result:")
+                print(analysis_result.get('content', 'No content available'))
 
-            if signal.lower() == "buy":
-                print(Fore.CYAN + Style.BRIGHT + "\nExecuting swap...")
-                swap_result = self.execute_swap()
-                print(Fore.CYAN + Style.BRIGHT + "Swap Result:")
-                print(swap_result)
+                if signal.lower() == "buy":
+                    print(Fore.CYAN + Style.BRIGHT + "\nExecuting swap...")
+                    swap_result = self.execute_swap()
+                    print(Fore.CYAN + Style.BRIGHT + "Swap Result:")
+                    print(swap_result)
+            else:
+                print(Fore.RED + Style.BRIGHT + "Analysis failed, no result available.")
 
 # Example usage
 if __name__ == "__main__":
