@@ -1,6 +1,6 @@
 # TradingAgent
 
-TradingAgent is a Python-based agent that fetches Bitcoin market analysis data, analyzes it using OpenAI, and executes a swap if the signal is "buy". The agent uses environment variables for configuration and provides a colorful, formatted output for better presentation. Trading execution is being done on a TEE machine.
+TradingAgent is a Python-based agent that fetches Bitcoin market analysis data, analyzes it using ZkAGI transformer, and executes a swap if the signal is "buy". The agent uses environment variables for configuration and provides a colorful, formatted output for better presentation. Trading execution is being done on a TEE machine.
 
 
 Watch a video demonstration of the TradingAgent in action:
