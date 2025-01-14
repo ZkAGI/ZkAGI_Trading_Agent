@@ -3,6 +3,10 @@
 TradingAgent is a Python-based agent that fetches Bitcoin market analysis data, analyzes it using OpenAI, and executes a swap if the signal is "buy". The agent uses environment variables for configuration and provides a colorful, formatted output for better presentation. Trading execution is being done on a TEE machine.
 
 
+Watch a video demonstration of the TradingAgent in action:
+[![Watch the video]](https://drive.google.com/file/d/1SIK_ZhYUQIZcpi5Grhrnl7XMOjsuf7GR/view?usp=drive_link)
+
+
 ## Features
 
 - Fetches Bitcoin market analysis data from a specified API.
@@ -66,8 +70,6 @@ The script will print the following steps with the appropriate colors and symbol
 6. `Analysis Result:` followed by the detailed analysis result from the OpenAI API.
 7. If the signal is "buy", it will print `Executing swap...`, `Swap started ✅`, and `Swap executed successfully ✅` or `Failed to execute swap: {status_code} ❌` depending on the swap result.
 
-Watch a video demonstration of the TradingAgent in action:
-[![Watch the video]](https://drive.google.com/file/d/1SIK_ZhYUQIZcpi5Grhrnl7XMOjsuf7GR/view?usp=drive_link)
 
 ---
 
