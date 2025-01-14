@@ -45,10 +45,13 @@ TradingAgent is a Python-based agent that fetches Bitcoin market analysis data, 
 
 1. Run the agent:
     ```sh
-    python trading_agent.py
+    python agent.py
     ```
-
-2. The agent will start, fetch the analysis data, analyze it, and execute a swap if the signal is "buy". The output will be colorful and formatted for better readability.
+2. If you want to use ZK Enabled Agent, run:
+    ```sh
+    python agent_with_ZK.py
+    ```
+3. The agent will start, fetch the analysis data, analyze it, and execute a swap if the signal is "buy". The output will be colorful and formatted for better readability.
 
 ## Output
 
