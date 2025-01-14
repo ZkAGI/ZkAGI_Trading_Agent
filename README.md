@@ -3,7 +3,7 @@
 ZkAGI AiFi Trading Agent is a autonomously executing Python-based agent that fetches Bitcoin market analysis data, analyzes it using a time series transformer inside the ZkAGI network, and executes a swap if the signal is "buy". Trading execution is being done on a TEE machine where the agents wallet is stored and the user cross verifies whether an action is to be taken based on 'buy' signals emanating from the predictions of the time series transformer.
 
 
-Watch a video demonstration of the TradingAgent in action:
+Watch a video demonstration of the ZkAGI AiFi Trading Agent in action:
 [![Watch the video]](https://drive.google.com/file/d/1SIK_ZhYUQIZcpi5Grhrnl7XMOjsuf7GR/view?usp=drive_link)
 
 
