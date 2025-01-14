@@ -2,6 +2,7 @@ import requests
 import time
 from dotenv import load_dotenv
 import os
+import json
 from colorama import Fore, Style, init
 
 # Initialize colorama
@@ -73,7 +74,16 @@ class TradingAgent:
 
         if response.status_code == 200:
             print(Fore.GREEN + Style.BRIGHT + f"Analysis Time= {end_time - start_time:.2f} seconds")
-            return response.json().get('choices', [{}])[0].get('message', {})
+            response_data = response.json()
+            analysis_result = response_data.get('choices', [{}])[0].get('message', {})
+            zk_proof = response_data.get('zk_proof', {})
+
+            # Print zk_proof in green immediately after the API call response
+            print(Fore.GREEN + Style.BRIGHT + "\nZK Proof:")
+            print(json.dumps(zk_proof, indent=4))
+
+
+            return analysis_result
         else:
             print(Fore.RED + Style.BRIGHT + f"Failed to analyze response: {response.status_code} ❌")
             print(Fore.RED + Style.BRIGHT + f"Response: {response.text}")
