@@ -1,6 +1,6 @@
-# TradingAgent
+# ZkAGI AiFi Trading Agent 
 
-TradingAgent is a Python-based agent that fetches Bitcoin market analysis data, analyzes it using ZkAGI transformer, and executes a swap if the signal is "buy". The agent uses environment variables for configuration and provides a colorful, formatted output for better presentation. Trading execution is being done on a TEE machine.
+ZkAGI AiFi Trading Agent is a autonomously executing Python-based agent that fetches Bitcoin market analysis data, analyzes it using a time series transformer inside the ZkAGI network, and executes a swap if the signal is "buy". Trading execution is being done on a TEE machine where the agents wallet is stored and the user cross verifies whether an action is to be taken based on 'buy' signals emanating from the predictions of the time series transformer.
 
 
 Watch a video demonstration of the TradingAgent in action:
@@ -9,17 +9,16 @@ Watch a video demonstration of the TradingAgent in action:
 
 ## Features
 
-- Fetches Bitcoin market analysis data from a specified API.
-- Analyzes the data using OpenAI's language model.
-- Executes a swap if the signal is "buy".
-- Provides a colorful and formatted output for better readability.
-- Uses environment variables for configuration.
+- Fetches Bitcoin market analysis data
+- Analyzes the data using ZkAGI Zynapse API embedded with Nixtla Time series transformer.
+- Executes a swap using wallet in TEE if the signal is "buy".
+- User authenticates actions using Tg double check.
 
 ## Requirements
 
 - Python 3.x
 - `requests` library
-- `openai` library
+- `Zynapse API` key
 - `python-dotenv` library
 - `colorama` library
 
