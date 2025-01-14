@@ -22,8 +22,8 @@ TradingAgent is a Python-based agent that fetches Bitcoin market analysis data, 
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/TradingAgent.git
-    cd TradingAgent
+    git clone https://github.com/ZkAGI/ZkAGI_Trading_Agent.git
+    cd ZkAGI_Trading_Agent
     ```
 
 2. Install the required libraries:
