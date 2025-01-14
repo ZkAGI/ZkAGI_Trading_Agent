@@ -33,10 +33,10 @@ TradingAgent is a Python-based agent that fetches Bitcoin market analysis data, 
 
 3. Create a `.env` file in the project directory with the following content:
     ```
-    ZKAGI_API_KEY=your_openai_api_key
+    ZKAGI_API_KEY=your_zkagi_api_key
     ZKAGI_API_URL=https://zynapse.zkagi.ai/v1
-    ANALYSIS_API_URL=http://211.47.56.52:30909/predict
-    SWAP_API_URL=http://34.67.134.209/swap
+    ANALYSIS_API_URL=
+    SWAP_API_URL=
     TELEGRAM_ID=your_telegram_id
     OUTPUT_MINT=your_output_mint
     ```
