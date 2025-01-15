@@ -66,7 +66,7 @@ The script will print the following steps with the appropriate colors and symbol
 3. `Analysis Data Received:` followed by the signal.
 4. `Signal is: buy ✅` or `Signal is: hold ❌` depending on the signal.
 5. `Analyzing response...`
-6. `Analysis Result:` followed by the detailed analysis result from the OpenAI API.
+6. `Analysis Result:` followed by the detailed analysis result from the Zynapse API.
 7. If the signal is "buy", it will print `Executing swap...`, `Swap started ✅`, and `Swap executed successfully ✅` or `Failed to execute swap: {status_code} ❌` depending on the swap result.
 
 
